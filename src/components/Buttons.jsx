@@ -6,10 +6,16 @@ class Buttons extends Component {
     render() {
         return (
             <div className="buttons">
-                <Button className="btn" shape="round" size="large" onClick={this.props.onSave}>
+                <Button className="btn btn--outline" size="large" onClick={this.props.onSave}>
                     Сохранить командировку
                 </Button>
-                <Button className="btn btn--dark-blue" shape="round" size="large" onClick={this.props.onSubmit}>
+                <Button
+                    className="btn btn--dark-blue"
+                    type="primary"
+                    shape="round"
+                    size="large"
+                    onClick={this.props.onSubmit}
+                >
                     Показать варианты
                 </Button>
             </div>

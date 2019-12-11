@@ -36,6 +36,7 @@ export default class FormInput extends Component {
                             return (
                                 <div className="dateInput">
                                     <DatePicker
+                                        allowClear={false}
                                         defaultValue={moment()}
                                         onChange={this.datePickerOnChange}
                                         format={format}
