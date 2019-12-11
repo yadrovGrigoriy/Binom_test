@@ -1,43 +1,66 @@
+@import './fonts/stylesheet.css';
+@import '~antd/dist/antd.css';
+
 html {
     font-size: 16px;
 }
 body {
+    font-family: 'Circe', sans-serif !important;
     margin: 0;
-    font-family: 'Circe', sans-serif;
+    box-sizing: border-box;
 }
-.wrapper {
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14);
-    border-radius: 16px;
-}
+
 .container {
     max-width: 1280px;
-    padding: 0 25;
+    padding: 24px;
     margin: 0 auto;
 }
 .buisiness-trip {
-    &__form {
-        padding: 25px;
+    max-width: 1322px;
+    padding: 0 25px 25px;
+    margin: 0 auto;
+    background-color: #f7f7f7;
+    &__inner {
+        max-width: 1322px;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14);
+        border-radius: 16px;
+        background-color: #fff;
+        padding-bottom: 24px;
+    }
+}
+.title {
+    font-weight: bold;
+    &--section {
+        padding: 5px 24px 36px 24px;
+        font-size: 40px;
+    }
+    &--services {
+        font-size: 20px;
+        font-weight: bold;
+        padding: 20px 24px 11px;
+        color: rgba(0, 0, 0, 0.87);
     }
 }
 
-.section__title {
-    text-align: center;
+.inputSearch {
+    .ant-select-auto-complete.ant-select {
+        .ant-input {
+            color: rgba(0, 0, 0, 0.88);
+            border: 2px solid rgba(0, 0, 0, 0.12);
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+    }
 }
 
-.form {
-    padding: 24px;
+.dateInput {
+    .ant-calendar-picker-input {
+        border: 2px solid rgba(0, 0, 0, 0.12);
+        color: rgba(0, 0, 0, 0.88);
+    }
 }
 .input-wrap {
     position: relative;
-    margin: 10px;
-}
-.ant-input {
-    &.ant-input-lg,
-    .ant-select-search__field {
-        border: 2px solid rgba(0, 0, 0, 0.12);
-        box-sizing: border-box;
-        border-radius: 4px;
-    }
 }
 .input-label {
     position: absolute;
@@ -46,30 +69,21 @@ body {
     z-index: 10;
     background-color: #fff;
     padding: 0 5px;
+    color: rgba(0, 0, 0, 0.56);
 }
 .people-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
     &__item {
-        display: flex;
+        display: inline-flex;
         justify-content: space-between;
         align-items: center;
         background: rgba(0, 38, 136, 0.12);
         border-radius: 50px;
         padding: 5px 12px;
-        margin-right: 10px;
-        // &:after {
-        //     content: '';
-        //     position: absolute;
-        //     display: block;
-        //     width: 18px;
-        //     height: 18px;
-        //     background: url('./cancel.png') center;
-        //     top: 7px;
-        //     right: 10px;
-        //     cursor: pointer;
-        // }
+        color: rgba(0, 0, 0, 0.6);
+
+        &:not(last-child) {
+            margin: 8px 8px 0 0;
+        }
     }
 }
 .icon--del {
@@ -77,7 +91,65 @@ body {
     align-items: center;
     margin-left: 10px;
     cursor: pointer;
-    img {
-        width: 100%;
+}
+
+.ant-collapse {
+    &.ant-collapse-borderless {
+        .ant-collapse-item,
+        .ant-collapse-item:last-of-type {
+            border-top: 1px solid #d9d9d9;
+            border-bottom: none;
+            border-radius: 16px 16px 0px 0px;
+        }
+    }
+}
+.services {
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+.services-list {
+    &__item {
+        display: inline-block;
+        font-weight: bold;
+        margin-left: 25px;
+        color: rgba(0, 0, 0, 0.88);
+    }
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 24px;
+    justify-content: flex-end;
+}
+.btn {
+    border-radius: 50px;
+    max-width: 400px;
+    width: 100%;
+    font-size: 14px !important ; //так и не смог победить ant design чтобы переопределить его стили
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0 0 10px 24px;
+    line-height: 24px;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+    &--outline {
+        border: 2px solid rgba(0, 0, 0, 0.12);
+        background: transparent;
+        &:hover {
+            color: #40a9ff;
+            border-color: #40a9ff;
+        }
+    }
+    &--dark-blue {
+        background: #002688;
+        box-shadow: 0px 1px 5px rgba(0, 38, 136, 0.2), 0px 2px 2px rgba(0, 38, 136, 0.14);
+        color: #fff;
+        border: none;
+        &:hover {
+            color: #fff;
+            background-color: #40a9ff;
+            border-color: #40a9ff;
+        }
     }
 }
